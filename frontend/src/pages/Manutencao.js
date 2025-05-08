@@ -7,6 +7,7 @@ import Tabela from "../components/Tabela.jsx";
 
 const Manutencao = () => {
   const [pedidos, setPedidos] = useState([]);
+  const [mensagemErro, setMensagemErro] = useState(null);
   const [statusOptions, setStatusOptions] = useState([]);
   const [editDateId, setEditDateId] = useState(null);
   const [newDate, setNewDate] = useState('');
@@ -20,9 +21,23 @@ const Manutencao = () => {
         });
         const data = await res.json();
         console.log(data);
-        setPedidos(data);
+        if (data && Array.isArray(data.pedidos)) {
+          // Se 'pedidos' for um array, atualize o estado
+          setPedidos(data.pedidos);
+          setMensagemErro(null);  // Limpar qualquer mensagem de erro anterior
+        } else if (data && data.detail) {
+          // Caso a resposta seja um objeto com a chave 'detail', trate como erro
+          setMensagemErro(data.detail);
+          setPedidos([]);  // Não há pedidos, então esvazia o array
+        } else {
+          // Caso não se encaixe em nenhum dos cenários, definir como erro genérico
+          setMensagemErro('Erro inesperado ao carregar os dados');
+          setPedidos([]);
+        }
       } catch (error) {
-        console.error('Erro ao buscar pedidos de manutenção:', error);
+        console.error('Erro ao carregar os dados:', error);
+        setMensagemErro('Falha ao carregar os dados');
+        setPedidos([]);
       }
     };
 

@@ -46,7 +46,7 @@ function App() {
             <Route path="/perfil" element={<ProtectedRoute allowedRoles={["residente","gestor", "admin"]}><Perfil /></ProtectedRoute>}/>
             <Route path="/meusRecursos" element={<ProtectedRoute allowedRoles={["residente","gestor", "admin"]}><MeusRecursos /></ProtectedRoute>}/>
             <Route path="/listaPedidosReserva" element={<ProtectedRoute allowedRoles={["residente","gestor", "admin"]}><ListaPedidosReserva /></ProtectedRoute>}/>
-            <Route path="/listaReservas" element={<ProtectedRoute allowedRoles={["residente","gestor", "admin"]}><ListaReserva /></ProtectedRoute>}/>
+            <Route path="/listaReserva" element={<ProtectedRoute allowedRoles={["residente","gestor", "admin"]}><ListaReserva /></ProtectedRoute>}/>
             <Route path="/realizarPedidoNovoRecurso" element={<ProtectedRoute allowedRoles={["residente","gestor", "admin"]}><RealizarPedidoNovoRecurso /></ProtectedRoute>}/>
             <Route path="/realizarPedidoManutencao" element={<ProtectedRoute allowedRoles={["residente","gestor", "admin"]}><RealizarPedidoManutencao /></ProtectedRoute>}/>
             <Route path="/pedidosManutencao" element={<ProtectedRoute allowedRoles={["gestor", "admin"]}><PedidosManutencao /></ProtectedRoute>}/>

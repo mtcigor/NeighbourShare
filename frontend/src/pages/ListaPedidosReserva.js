@@ -79,11 +79,11 @@ const ReservarRecurso = ({ match }) => {
   const pedidosEmAnaliseDono = Array.isArray(comoDono) ? comoDono.filter(reservation => reservation.EstadoPedidoReserva === "Em análise") : [];
 
   return (
-    <div className={styles.pageContent}>
+    <div className="page-content">
       <Navbar2 />
-      <div className={styles.homeContainer}>
-        <div className={styles.fundoListaPedidosReserva}>
-          <p className={styles.tituloPedidosReserva}>Os Meus Pedidos de Reserva Feitos</p>
+      <div className="home-container">
+        <div className={styles.fundo}>
+          <p className={styles.titulo}>Os Meus Pedidos de Reserva Feitos</p>
           <Tabela
             colunas={['PedidoReservaID', 'RecursoNome', 'NomeDono', 'DataInicio', 'DataFim', 'EstadoPedidoReserva']}
             dados={pedidosEmAnaliseSolicitante}
@@ -91,8 +91,8 @@ const ReservarRecurso = ({ match }) => {
           />
         </div>
 
-        <div className={styles.fundoListaPedidosReserva}>
-          <p className={styles.tituloPedidosReserva}>Pedidos de Reserva</p>
+        <div className={styles.fundo}>
+          <p className={styles.titulo}>Pedidos de Reserva</p>
           <Tabela
             colunas={['PedidoReservaID', 'UtilizadorNome', 'RecursoNome', 'DataInicio', 'DataFim', 'Ação']}
             dados={pedidosEmAnaliseDono.map(p => ({

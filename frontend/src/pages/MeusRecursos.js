@@ -102,8 +102,19 @@ const MeusRecursos = () => {
               <input type="text" placeholder="Nome do Recurso" value={newResource.nome_recurso} onChange={(e) => setNewResource({ ...newResource, nome_recurso: e.target.value })}/>
               <textarea placeholder="Descrição" value={newResource.descricao_recurso} onChange={(e) => setNewResource({ ...newResource, descricao_recurso: e.target.value })}/>
               <input type="text" placeholder="Caução" value={newResource.caucao_recurso} onChange={(e) => setNewResource({ ...newResource, caucao_recurso: e.target.value })}/>
-              <input type="text" placeholder="Disponível" value={newResource.recurso_disponivel} onChange={(e) => setNewResource({ ...newResource, recurso_disponivel: e.target.value })}/>
-              <input type="text" placeholder="Categoria" value={newResource.categoria_recurso} onChange={(e) => setNewResource({ ...newResource, categoria_recurso: e.target.value })}/>
+              <select className='input-style' value={newResource.recurso_disponivel} onChange={(e) => setNewResource({ ...newResource, recurso_disponivel: e.target.value })}>
+                <option value="">Disponível?</option>
+                <option value="Disponível">Disponível</option>
+                <option value="Indisponível">Indisponível</option>
+              </select>
+              <select className='input-style' value={newResource.categoria_recurso} onChange={(e) => setNewResource({ ...newResource, categoria_recurso: e.target.value })}>
+                <option value="">Selecione a Categoria</option>
+                <option value="Lazer">Lazer</option>
+                <option value="Tecnologia">Tecnologia</option>
+                <option value="Ferramentas">Ferramentas</option>
+                <option value="Cozinha">Cozinha</option>
+                <option value="Outros">Outros</option>
+              </select>
               <input type="file" onChange={handleFileChange} />
               <div>
                 <button onClick={handleAddResource}>Adicionar</button>
