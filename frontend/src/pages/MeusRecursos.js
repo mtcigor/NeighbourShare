@@ -3,6 +3,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../styles/MeusRecursos.css";
 import Navbar2 from "../components/Navbar2.js";
+import Button from "../components/Button";
 
 const MeusRecursos = () => {
   const [recurso, setUsers] = useState([]);
@@ -90,7 +91,7 @@ const MeusRecursos = () => {
 
 
       {/* Botão para abrir o modal de adicionar recurso */}
-      <button className="btn-registarRecurso" onClick={() => setShowModal(true)}>Adicionar Recurso</button>
+      <Button className="btn-registarRecurso" onClick={() => setShowModal(true)}>Adicionar Recurso</Button>
 
       {/* Modal de Adicionar Recurso */}
       {showModal && (
@@ -117,8 +118,8 @@ const MeusRecursos = () => {
               </select>
               <input type="file" onChange={handleFileChange} />
               <div>
-                <button onClick={handleAddResource}>Adicionar</button>
-                <button onClick={() => setShowModal(false)}>Cancelar</button>
+                <Button onClick={handleAddResource}>Adicionar</Button>
+                <Button onClick={() => setShowModal(false)}>Cancelar</Button>
               </div>
           </div>
         </>
