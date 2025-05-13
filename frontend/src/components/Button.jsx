@@ -6,7 +6,7 @@ import React from 'react';
  * Um botão reutilizável que permite escolher variantes de estilo e adicionar outras propriedades facilmente.
  *
  * Props:
- * - children: Conteúdo dentro do botão (texto, ícones, etc.).
+ * - text: Conteúdo dentro do botão (texto, ícones, etc.).
  * - onClick: Função chamada ao clicar no botão.
  * - type: Tipo de botão ("button", "submit", "reset"). Valor padrão: "button".
  * - className: Classes CSS adicionais.
@@ -14,7 +14,7 @@ import React from 'react';
  * - ...props: Outros atributos HTML válidos (id, disabled, title, etc.).
  */
 const Button = ({ 
-  children, 
+  text, 
   onClick, 
   type = "button", 
   className = "", 
