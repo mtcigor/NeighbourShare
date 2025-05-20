@@ -11,41 +11,85 @@ function Residente() {
       <Navbar2 />
       <div className="home-containerMenu">
         <p className="menu-title">Menu Principal</p>
-        <div className="botoes">
-
-          {/* Links comuns a todos */}
-          <Link className="btnMenu" to="/perfil">Perfil</Link><br />
-          <Link className="btnMenu" to="/notificacoes">Notificações</Link><br />
-          <Link className="btnMenu" to="/listaPedidosReserva">Pedidos de Reserva</Link><br />
-          <Link className="btnMenu" to="/listaReserva">Reservas</Link><br />
-          <Link className="btnMenu" to="/meusRecursos">Meus Recursos</Link><br />
-          <Link className="btnMenu" to="/realizarPedidoManutencao">Realizar Pedido Manutenção</Link><br />
-          <Link className="btnMenu" to="/realizarPedidoNovoRecurso">Realizar Pedido Novo Recurso</Link><br />
-          <Link className="btnMenu" to="/recursosDisponiveis">Recursos Disponíveis</Link><br />
-          <Link className="btnMenu" to="/votacoes">Votações</Link><br />
+        <div className="card-grid">
+          <div className="card">
+            <img src="img/notificacoes_back.jpeg" alt="Descrição" className="card-img" />
+            <Link className="card-text" to="/notificacoes">Notificações</Link><br />
+          </div>
+          <div className="card">
+            <img src="img/pedidos_reserva.jpeg" alt="Descrição" className="card-img" />
+            <Link className="card-text" to="/listaPedidosReserva">Pedidos de Reserva</Link><br />
+          </div>
+          <div className="card">
+            <img src="img/reservas.jpg" alt="Descrição" className="card-img" />
+            <Link className="card-text" to="/listaReserva">Reservas</Link><br />
+          </div>
+          <div className="card">
+            <img src="img/meus_recursos.png" alt="Descrição" className="card-img" />
+            <Link className="card-text" to="/meusRecursos">Meus Recursos</Link><br />
+          </div>
+          <div className="card">
+            <img src="img/pedido_manutencao.jpeg" alt="Descrição" className="card-img" />
+            <Link className="card-text" to="/realizarPedidoManutencao">Realizar Pedido Manutenção</Link><br />
+          </div>
+          <div className="card">
+            <img src="img/pedido_novo_rec.png" alt="Descrição" className="card-img" />
+            <Link className="card-text" to="/realizarPedidoNovoRecurso">Realizar Pedido Novo Recurso</Link><br />
+          </div>
+          <div className="card">
+            <img src="img/recursos_disp.jpeg" alt="Descrição" className="card-img" />
+            <Link className="card-text" to="/recursosDisponiveis">Recursos Disponíveis</Link><br />
+          </div>
+          <div className="card">
+            <img src="img/votacoes.jpeg" alt="Descrição" className="card-img" />
+            <Link className="card-text" to="/votacoes">Votações</Link><br />
+          </div>
+          
 
           {/* Apenas Gestores */}
           {user?.role === "gestor" && (
-            <>´
-              <Link className="btnMenu" to="/manutencao">Manutenções</Link><br />
-              <Link className="btnMenu" to="/entidadeExterna">Entidades Externas</Link><br />
-              <Link className="btnMenu" to="/orcamentos">Orçamentos</Link><br />
-              <Link className="btnMenu" to="/pedidosManutencao">Pedidos Manutenção</Link><br />
-              <Link className="btnMenu" to="/pedidosNovosRecursos">Pedidos Novos Recursos</Link><br />
-              <Link className="btnMenu" to="/recursosComuns">Recursos Comuns</Link><br />
+            <>
+              <div className="card">
+                <img src="img/manutencao.jpg" alt="Descrição" className="card-img" />
+                <Link className="card-text" to="/manutencao">Manutenções</Link><br />
+              </div>
+              <div className="card">
+                <img src="img/entidades.jpg" alt="Descrição" className="card-img" />
+                <Link className="card-text" to="/entidadeExterna">Entidades Externas</Link><br />
+              </div>
+              <div className="card">
+                <img src="img/orcamentos.png" alt="Descrição" className="card-img" />
+                <Link className="card-text" to="/orcamentos">Orçamentos</Link><br />
+              </div>
+              <div className="card">
+                <img src="img/pedidos_manutencoes.jpeg" alt="Descrição" className="card-img" />
+                <Link className="card-text" to="/pedidosManutencao">Pedidos Manutenção</Link><br />
+              </div>
+              <div className="card">
+                <img src="img/pedidos_novos_rec.jpg" alt="Descrição" className="card-img" />
+                <Link className="card-text" to="/pedidosNovosRecursos">Pedidos Novos Recursos</Link><br />
+              </div>
+              <div className="card">
+                <img src="img/rec_comum.jpg" alt="Descrição" className="card-img" />
+                <Link className="card-text" to="/recursosComuns">Recursos Comuns</Link><br />
+              </div>
             </>
           )}
 
           {/* Apenas Admins */}
           {user?.role === "admin" && (
             <>
-              <Link className="btnMenu" to="/registar">Registar</Link><br />
+              <div className="card">
+                <img src="img/registar.jpg" alt="Descrição" className="card-img" />
+                <Link className="card-text" to="/registar">Registar</Link><br />
+              </div>
             </>
           )}
 
         </div>
       </div>
     </div>
+
   );
 }
 
