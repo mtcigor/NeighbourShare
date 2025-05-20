@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Button from '../components/Button.js';
+import "../styles/RecuperarPass.css";
 
 function RecuperarPass() {
   const [password, setPassword] = useState("");
   const [token, setToken] = useState("");
   const [error, setError] = useState("");
   const location = useLocation();
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const search = location.search;
@@ -35,6 +37,11 @@ function RecuperarPass() {
       if (response.ok) {
         toast.success('Senha alterada com sucesso!');
         setPassword("");
+
+        // Aguarda 2 segundos para mostrar o toast e depois redireciona
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
       } else {
         setError(data.detail);
         toast.error('Erro ao alterar senha.');
@@ -51,6 +58,7 @@ function RecuperarPass() {
       <form className="form-recuperar-pass" onSubmit={handleSubmit}>
         <div className="container-center">
           <input
+            className="inputNovaPass"
             type="password"
             name="password"
             value={password}

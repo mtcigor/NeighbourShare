@@ -76,5 +76,23 @@
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJnZXN0b3JAZW1haWwuY29tIiwicm9sZSI6Imdlc3RvciIsInR5cGUiOiJhY2Nlc3MiLCJleHAiOjE3NDc3NDQzNzB9.WQTQs8EiNSAWOfIfcRkOBLrLT5pq7lvnoDFqSe-D7bg",
         "role": "gestor",
         "timestamp": 1747742570.2755797
+    },
+    {
+        "user_id": 3,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJyZXNpZGVudGVAZW1haWwuY29tIiwicm9sZSI6InJlc2lkZW50ZSIsInR5cGUiOiJhY2Nlc3MiLCJleHAiOjE3NDc3NDUyOTN9.4_4N19WX8xrH701wSQ_HY_t2NXONqPRb5TVmUN_Ajwo",
+        "role": "residente",
+        "timestamp": 1747743493.8882353
+    },
+    {
+        "user_id": 2,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJnZXN0b3JAZW1haWwuY29tIiwicm9sZSI6Imdlc3RvciIsInR5cGUiOiJhY2Nlc3MiLCJleHAiOjE3NDc3NDY4MTB9.8qRTzB7TyRhj_95i9WoIBIo0Et8ZaWgCq6DTOJVrM1U",
+        "role": "gestor",
+        "timestamp": 1747745010.4877353
+    },
+    {
+        "user_id": 1,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBlbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJ0eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NzQ2ODc5fQ.KXZM_iuexecTgWUYhNr2Bz6uSbjg1YLRlgYOhgwf7J8",
+        "role": "admin",
+        "timestamp": 1747745079.6823785
     }
 ]

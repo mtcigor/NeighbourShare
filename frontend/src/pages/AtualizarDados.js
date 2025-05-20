@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Button from '../components/Button.js';
+import '../styles/AtualizarDados.css'; // importa o CSS personalizado
 
 const AtualizarDados = () => {
   const [data_nascimento, setDataNascimento] = useState('');
@@ -13,18 +14,17 @@ const AtualizarDados = () => {
   const [foto, setFoto] = useState(null);
 
   const location = useLocation();
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const search = location.search;
     if (search.startsWith('?')) {
-      const tokenFromUrl = search.substring(1); // remove o '?'
+      const tokenFromUrl = search.substring(1);
       setToken(tokenFromUrl);
     }
   }, [location]);
-  
 
   const handleUpdate = async () => {
-
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d])([^\s]){8,}$/;
 
     if (!passwordRegex.test(password)) {
@@ -38,9 +38,7 @@ const AtualizarDados = () => {
     formData.append('contacto', contacto);
     formData.append('password', password);
     formData.append('token', token);
-    if (foto) {
-      formData.append('foto', foto);
-    }
+    if (foto) formData.append('foto', foto);
 
     try {
       const res = await fetch('http://localhost:8000/api/registar/atualizar_dados', {
@@ -50,7 +48,6 @@ const AtualizarDados = () => {
 
       if (!res.ok) {
         const errorData = await res.json();
-        console.error(errorData);
         throw new Error(errorData.detail || 'Erro ao atualizar dados');
       }
 
@@ -60,6 +57,10 @@ const AtualizarDados = () => {
       setContacto('');
       setPassword('');
       setFoto(null);
+
+      setTimeout(() => {
+        navigate('/login'); 
+      }, 2000);
     } catch (error) {
       toast.error('Erro ao atualizar dados: ' + error.message);
     }
@@ -68,37 +69,42 @@ const AtualizarDados = () => {
   return (
     <div className="page-content">
       <div className="update-container">
-        <h2>Atualizar Dados</h2>
+        <h1>Atualizar Dados</h1>
         <input
           type="date"
-          placeholder="Data de Nascimento"
           value={data_nascimento}
           onChange={(e) => setDataNascimento(e.target.value)}
+          className="update-input"
         />
         <input
           type="text"
           placeholder="Nome"
           value={nome}
           onChange={(e) => setNome(e.target.value)}
+          className="update-input"
         />
         <input
           type="number"
           placeholder="Contacto"
           value={contacto}
           onChange={(e) => setContacto(e.target.value)}
+          className="update-input"
         />
-
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className="update-input"
         />
         <input
           type="file"
           onChange={(e) => setFoto(e.target.files[0])}
+          className="update-input"
         />
-        <Button onClick={handleUpdate}>Atualizar</Button>
+        <div className="btn-update-wrapper">
+          <Button onClick={handleUpdate} className='btn'>Atualizar</Button>
+        </div>
       </div>
       <ToastContainer />
     </div>

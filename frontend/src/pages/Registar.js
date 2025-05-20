@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Button from '../components/Button.js';
+import "../styles/Registar.css";
 
 const Registar = () => {
   const [email, setEmail] = useState('');
@@ -33,25 +34,35 @@ const Registar = () => {
   };
 
   return (
-    <div className="page-content">
-      <div className="register-container">
-        <h2>Registar Utilizador</h2>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Role"
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-        />
-        <Button onClick={handleRegister}>Registar</Button>
+    <div className="container-registar">
+      <div className="container-esquerda">
+        <h1>Registar Utilizador</h1>
+        <div className="container-formulario">
+            <h2>Registar Novo Utilizador</h2><br></br>
+            <div className="container-form">
+              <input className="inputRegisto"  type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+            
+              <select className="inputRegisto" value={role} onChange={(e) => setRole(e.target.value)}>
+                <option value="">Selecione um cargo</option>
+                <option value="residente">Residente</option>
+                <option value="gestor">Gestor</option>
+                <option value="admin">Admin</option>
+              </select>
+
+              
+              <div className="container-btn">
+                <Button onClick={handleRegister} className="btn">Registar</Button>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div className="container-direita">
+        <img className="imagem" src="img/fundo.jpg" alt="Imagem" />
       </div>
       <ToastContainer />
     </div>
+
+        
   );
 };
 

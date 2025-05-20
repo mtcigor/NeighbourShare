@@ -68,8 +68,8 @@ const RealizarPedidoManutencao = () => {
             <h1>Realizar Pedido de Manutenção</h1>
             <form onSubmit={handleSubmit}>
               <div>
-                <label>Id:</label><br></br>
-                <select value={recurso_comum_id} onChange={(e) => setRecursoId(e.target.value)} required>
+                <label>Recurso:</label><br></br>
+                <select className='selectNovoRecurso' value={recurso_comum_id} onChange={(e) => setRecursoId(e.target.value)} required>
                   <option value="">Selecione um recurso</option>
                   {recursos.map((recurso) => (
                     <option key={recurso.RecComumID} value={recurso.RecComumID}>

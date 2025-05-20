@@ -1,0 +1,70 @@
+.home-containerReservas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap; /* para adaptar em ecrãs pequenos */
+  margin-top: 2rem;
+  background: linear-gradient(180deg, #F2F1EE 25%, #8BC9E0 100%);
+  height: 100vh; /* Garantir que ocupe toda a altura da tela */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.image-section {
+  flex: 1.5;
+  max-width: 75%;
+}
+
+.image-section img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.details-section {
+  margin-left: 25%;
+  margin-top: 50px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.details-section h2 {
+  margin: 0.5rem 0;
+  color: black;
+  margin-bottom: 0px;
+}
+
+.details-section label {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.details-section input[type="date"] {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  width: 50%;
+}
+
+.btn-base {
+  padding: 0.6rem 1.2rem;
+  background-color: #1DADE2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 260px;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.btn-base:hover {
+  background-color: #148FBB;
+}

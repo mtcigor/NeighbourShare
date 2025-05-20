@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import "../styles/RecursosDisponiveis.css";
+import "../styles/PedidosReserva.css";
 import Navbar2 from "../components/Navbar2.js";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -68,25 +68,24 @@ const ReservarRecurso = () => {
   return (
     <div className="page-content">
       <Navbar2 />
-      <div className='home-container'>
+      <div className='home-containerReservas'>
 
-        <div>
-          <div>
-            <div key={product.RecursoID}>
-              <img src={product.Image} alt={product.name} />
-              <h2>{product.Nome}</h2>
-              <h2>{product.Categoria_.DescCategoria}</h2>
-              <h2>{product.Caucao}</h2>
-            </div>
-          </div>
-
-          <div>
-        <label>Data Início: <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} /></label>
-        <label>Data Fim: <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} /></label>
-        <Button onClick={handleReserve}>Reservar!</Button>
-      </div>
+        <div key={product.RecursoID} className="image-section">
+          <img src={product.Image} alt={product.name} />
         </div>
-        
+
+        <div key={product.RecursoID} className="details-section">
+          <h2>Nome do Produto: {product.Nome}</h2>
+          <h2>Categoria do Produto: {product.Categoria_.DescCategoria}</h2>
+          <h2>Caução: {product.Caucao}€</h2>
+          
+          <div className="centrados">
+          <label>Data Início: <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} /></label>
+          <label>Data Fim: <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} /></label>
+          <Button onClick={handleReserve} className="btn-base">Reservar!</Button>
+          </div>
+          
+        </div>
 
       </div>
       <ToastContainer />
