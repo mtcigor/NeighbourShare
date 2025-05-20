@@ -1,0 +1,45 @@
+.funcionalidades-container {
+  max-width: 1000px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.descricao {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.func-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.func-card:hover {
+  transform: translateY(-5px);
+}
+
+.func-card h2 {
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.func-card p {
+  color: #666;
+  line-height: 1.4;
+}

@@ -1,0 +1,48 @@
+.sobre-container {
+  max-width: 1000px;
+  padding: 40px 20px;
+  color: #333;
+}
+
+.intro, .projeto, .objetivos, .valores {
+  margin-bottom: 40px;
+}
+
+.intro h1{
+  margin-left: 0px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.projeto h2{
+  margin-left: 0px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.objetivos h2{
+  margin-left: 0px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.valores h2{
+  margin-left: 0px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+
+
+.objetivos ul {
+  list-style: none;
+}
+
+.objetivos ul li {
+  margin-bottom: 10px;
+  font-size: 17px;
+  padding-left: 24px;
+  position: relative;
+}
+
+

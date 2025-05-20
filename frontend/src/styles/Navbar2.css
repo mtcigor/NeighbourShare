@@ -137,3 +137,24 @@
 .dropdown-item:hover {
     background-color: #f8f9fa;
 }
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.login-button {
+  padding: 8px 16px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #2980b9;
+}

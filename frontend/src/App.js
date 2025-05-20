@@ -28,6 +28,9 @@ import RecuperarPass from "./pages/RecuperarPass.js";
 import Exemplo from "./pages/Exemplo.js";
 import EntidadeExterna from "./pages/EntidadeExterna.js";
 import RecursosComuns from "./pages/RecursosComuns.js";
+import Contactos from "./pages/Contactos.js";
+import Funcionalidades from "./pages/Funcionalidades.js";
+import Sobre from "./pages/Sobre.js";
 
 function App() {
   return (
@@ -61,6 +64,9 @@ function App() {
             <Route path="/entidadeExterna" element={<ProtectedRoute allowedRoles={["residente","gestor", "admin"]}><EntidadeExterna /></ProtectedRoute>}/>
             <Route path="/exemplo" element={<ProtectedRoute allowedRoles={["residente","gestor", "admin"]}><Exemplo /></ProtectedRoute>}/>
             <Route path="/recursosComuns" element={<ProtectedRoute allowedRoles={["gestor", "admin"]}><RecursosComuns /></ProtectedRoute>}/>
+            <Route path="/contactos" element={<Contactos />} />
+            <Route path="/funcionalidades" element={<Funcionalidades />} />
+            <Route path="/sobre" element={<Sobre />} />
           </Routes>
         </Router>
       </AuthProvider>
