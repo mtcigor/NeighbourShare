@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Button from '../components/Button.js';
 
 const Registar = () => {
   const [email, setEmail] = useState('');
@@ -20,21 +21,21 @@ const Registar = () => {
       if (!res.ok) {
         const errorData = await res.json();
         console.error(errorData);
-        throw new Error(errorData.detail || 'Erro ao registrar usuário');
+        throw new Error(errorData.detail || 'Erro ao registrar utilizador');
       }
 
-      toast.success('Usuário registrado com sucesso!');
+      toast.success('Utilizador registrado com sucesso!');
       setEmail('');
       setRole('');
     } catch (error) {
-      toast.error('Erro ao registrar usuário: ' + error.message);
+      toast.error('Erro ao registrar utilizador: ' + error.message);
     }
   };
 
   return (
     <div className="page-content">
       <div className="register-container">
-        <h2>Registrar Usuário</h2>
+        <h2>Registar Utilizador</h2>
         <input
           type="email"
           placeholder="Email"
@@ -47,7 +48,7 @@ const Registar = () => {
           value={role}
           onChange={(e) => setRole(e.target.value)}
         />
-        <button onClick={handleRegister}>Registrar</button>
+        <Button onClick={handleRegister}>Registar</Button>
       </div>
       <ToastContainer />
     </div>

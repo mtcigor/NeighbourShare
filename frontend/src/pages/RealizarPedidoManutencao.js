@@ -3,6 +3,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar2 from "../components/Navbar2.js";
 import "../styles/RealizarPedidoManutencao.css";
+import Button from '../components/Button.js';
 
 const RealizarPedidoManutencao = () => {
   const [recurso_comum_id, setRecursoId] = useState('');
@@ -82,8 +83,7 @@ const RealizarPedidoManutencao = () => {
                 <label>Descrição:</label><br></br>
                 <textarea className='inputNovoRecurso' value={desc_manutencao_recurso_comum} onChange={(e) => setDescricao(e.target.value)} required/>
               </div>
-
-              <button className='btnNovoRecurso' type="submit">Realizar pedido</button>
+              <Button className="btnNovoRecurso" type="submit">Realizar pedido</Button>
             </form>
           </div>
 

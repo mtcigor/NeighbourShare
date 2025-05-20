@@ -5,6 +5,7 @@ import Navbar2 from "../components/Navbar2.js";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Tabela from '../components/Tabela.jsx';
+import Button from '../components/Button.js';
 
 const ReservarRecurso = ({ match }) => {
   const [product, setProduct] = useState(null);
@@ -123,8 +124,8 @@ const ReservarRecurso = ({ match }) => {
               required
             />
             <div>
-              <button className={styles.modalButton} onClick={handleReject}>Enviar</button>
-              <button className={styles.modalButton} onClick={() => setShowRejectModal(false)}>Cancelar</button>
+              <Button onClick={handleReject} className={styles.modalButton}>Enviar</Button>
+              <Button onClick={() => setShowRejectModal(false)} className={styles.modalButton}>Cancelar</Button>
             </div>
           </div>
         </>

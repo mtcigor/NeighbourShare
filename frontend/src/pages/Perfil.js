@@ -4,7 +4,7 @@ import Navbar2 from "../components/Navbar2.js";
 import "../styles/Perfil.css";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Button from '../components/Button.js';
 
 const ProfilePage = () => {
   const [user, setUser] = useState(null);
@@ -156,8 +156,8 @@ const updatedUser = {
             </div>
           </div>
         </div>
-
-        <button className="btn-deletePerfil" onClick={() => setShowModal(true)}>Eliminar Conta</button>
+        
+        <Button onClick={() => setShowModal(true)} className="btn-deletePerfil">Eliminar Conta</Button>
 
         {showModal && (
           <>
@@ -165,8 +165,8 @@ const updatedUser = {
             <div className="modal-contentDelete">
               <h2>Tem a certeza que deseja eliminar a sua conta!</h2>
               <div>
-                <button onClick={handleDeleteAccount}>Eliminar</button>
-                <button onClick={() => setShowModal(false)}>Cancelar</button>
+                <Button onClick={handleDeleteAccount}>Eliminar</Button>
+                <Button onClick={() => setShowModal(false)}>Cancelar</Button>
               </div>
             </div>
           </>

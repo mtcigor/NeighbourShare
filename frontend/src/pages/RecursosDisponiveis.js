@@ -5,6 +5,7 @@ import Navbar2 from "../components/Navbar2.js";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const RecursosDisponiveis = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);

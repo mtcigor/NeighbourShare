@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import styles from "../styles/LayoutPaginasTabelas.module.css";
 import Navbar2 from "../components/Navbar2.js";
 import Tabela from '../components/Tabela.jsx';
+import Button from '../components/Button.js';
 
 const MeusPedidosReserva = () => {
   const [disabledButtons, setDisabledButtons] = useState(new Set());
@@ -229,8 +230,8 @@ const handleJustification = (id) => {
               ),
               'Confirmar Estado Recurso': (
                 <>
-                  <button className="btnSimReserva" onClick={() => handleUpdate(res.ReservaID, 'bomEstado', true, 'dono')}>Sim</button>
-                  <button className="btnNaoReserva" onClick={() => { setSelectedReservaID(res.ReservaID); setShowModal(true); }}>Não</button>
+                  <Button onClick={() => handleUpdate(res.ReservaID, 'bomEstado', true, 'dono')} className="btnSimReserva">Sim</Button>
+                  <Button onClick={() => { setSelectedReservaID(res.ReservaID); setShowModal(true); }} className="btnNaoReserva">Não</Button>
                 </>
               )
             }))}
@@ -249,8 +250,8 @@ const handleJustification = (id) => {
                 onChange={(e) => setNewResource({ ...newResource, justification: e.target.value })}
               />
               <div>
-                <button onClick={() => handleJustification(selectedReservaID)}>Enviar</button>
-                <button onClick={() => setShowModal(false)}>Cancelar</button>
+                <Button onClick={() => handleJustification(selectedReservaID)}>Enviar</Button>
+                <Button onClick={() => setShowModal(false)}>Cancelar</Button>
               </div>
             </div>
           </>

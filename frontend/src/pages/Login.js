@@ -5,6 +5,7 @@ import { InputLogin, InputPassword } from "../components/Inputs.js";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../styles/Login.css";
+import Button from '../components/Button.js';
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -93,9 +94,7 @@ function Login() {
                 onChange={handleChange}
               />
               <div className="container-btn">
-                <button className="btn" type="submit">
-                  Login
-                </button>
+                <Button className="btn" type="submit">Login</Button>
               </div>
               <p className="erro">{error && error}</p>
               <p className="link-recuperacao" onClick={() => setShowModal(true)}>Esqueceu a senha?</p>
@@ -119,8 +118,8 @@ function Login() {
               onChange={(e) => setEmailRecuperacao(e.target.value)}
               placeholder="Email"
             />
-            <button onClick={handleRecuperacaoSenha}>Enviar</button>
-            <button onClick={() => setShowModal(false)}>Cancelar</button>
+            <Button onClick={handleRecuperacaoSenha}>Enviar</Button>
+            <Button onClick={() => setShowModal(false)}>Cancelar</Button>
           </div>
         </>
       )}

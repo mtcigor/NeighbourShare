@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import styles from '../styles/LayoutPaginasTabelas.module.css';
 import Navbar2 from "../components/Navbar2.js";
 import Tabela from '../components/Tabela.jsx';
+import Button from '../components/Button.js';
 
 const EntidadesExternas = () => {
   const [entidades, setEntidades] = useState([]);
@@ -49,10 +50,10 @@ const EntidadesExternas = () => {
         credentials: 'include',
         body: JSON.stringify(novaEntidade)
       });
-      if (!res.ok) throw new Error('Erro ao registrar entidade.');
+      if (!res.ok) throw new Error('Erro ao registar entidade.');
       
       const data = await res.json();
-      toast.success('Entidade registrada com sucesso!');
+      toast.success('Entidade registada com sucesso!');
       setShowModal(false);
       setNovaEntidade({
         Especialidade: '',
@@ -63,8 +64,8 @@ const EntidadesExternas = () => {
       });
       setEntidades([...entidades, data]);
     } catch (error) {
-      console.error('Erro ao registrar entidade:', error);
-      toast.error('Erro ao registrar entidade.');
+      console.error('Erro ao registar entidade:', error);
+      toast.error('Erro ao registar entidade.');
     }
   };
 
@@ -83,12 +84,8 @@ const EntidadesExternas = () => {
       <div className="home-container">
         <div className={styles.fundo}>
           <p className={styles.pmeusRecursos}>Entidades Externas</p>
-          <button
-            onClick={() => setShowModal(true)}
-            className={styles.btnregistarRecurso}
-          >
-            Adicionar Entidade
-          </button>
+          <Button onClick={() => setShowModal(true)} className={styles.btnregistarRecurso}>Adicionar Entidade</Button>
+
 
           <Tabela
             colunas={colunas}
@@ -159,10 +156,8 @@ const EntidadesExternas = () => {
                   />
                 </label>
                 <div>
-                  <button type="submit">Registrar</button>
-                  <button type="button" onClick={() => setShowModal(false)}>
-                    Fechar
-                  </button>
+                  <Button type="submit">Registrar</Button>
+                  <Button onClick={() => setShowModal(false)} type="button">Fechar</Button>
                 </div>
               </form>
             </div>

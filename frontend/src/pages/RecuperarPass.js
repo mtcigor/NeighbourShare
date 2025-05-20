@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Button from '../components/Button.js';
 
 function RecuperarPass() {
   const [password, setPassword] = useState("");
@@ -57,9 +58,7 @@ function RecuperarPass() {
             placeholder="Nova Senha"
           />
           <div className="container-btn">
-            <button className="btn" type="submit">
-              Alterar Senha
-            </button>
+            <Button className="btn" type="submit">Alterar Senha</Button>
           </div>
           <p className="erro">{error && error}</p>
         </div>

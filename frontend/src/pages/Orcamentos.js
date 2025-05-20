@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import styles from '../styles/LayoutPaginasTabelas.module.css';
 import Navbar2 from "../components/Navbar2.js";
 import Tabela from "../components/Tabela.jsx";
+import Button from '../components/Button.js';
 
 const Orcamentos = () => {
   const [orcamentos, setOrcamentos] = useState([]);
@@ -77,10 +78,10 @@ const Orcamentos = () => {
 
       if (!res.ok) {
         const errorData = await res.json();
-        throw new Error(errorData.detail || 'Erro ao adicionar recurso');
+        throw new Error(errorData.detail || 'Erro ao adicionar orçamento');
       }
 
-      toast.success('Recurso adicionado com sucesso!');
+      toast.success('Orçamento adicionado com sucesso!');
       setShowModal(false);
       setNewResource({
         id_entidade_externa: '',
@@ -91,7 +92,7 @@ const Orcamentos = () => {
         tipoorcamento: ''
       });
     } catch (error) {
-      toast.error('Erro ao adicionar recurso: ' + error.message);
+      toast.error('Erro ao adicionar orçamento: ' + error.message);
     }
   };
 
@@ -135,12 +136,8 @@ const Orcamentos = () => {
 
       <div className="home-container">
         <div className={styles.fundo}>
-          <button className={styles.btnregistarRecurso} onClick={() => { setShowModal(true); setModalType('orcamento'); }}>
-            Inserir Orçamento
-          </button>
-          <button className={styles.btnregistarRecurso} onClick={() => { setShowModal(true); setModalType('votacao'); }}>
-            Criar Votação
-          </button>
+          <Button onClick={() => { setShowModal(true); setModalType('orcamento'); }} className={styles.btnregistarRecurso}>Inserir Orçamento</Button>
+          <Button onClick={() => { setShowModal(true); setModalType('votacao'); }} className={styles.btnregistarRecurso}>Criar Votação</Button>
 
           {showModal && (
             <>
@@ -166,8 +163,8 @@ const Orcamentos = () => {
                     <input type="text" placeholder="Tipo Orçamento" value={newResource.tipoorcamento} onChange={(e) => setNewResource({ ...newResource, tipoorcamento: e.target.value })} />
                     <input type="file" onChange={handleFileChange} />
                     <div>
-                      <button onClick={handleAddResource}>Adicionar</button>
-                      <button onClick={() => setShowModal(false)}>Cancelar</button>
+                      <Button onClick={handleAddResource}>Adicionar</Button>
+                      <Button onClick={() => setShowModal(false)}>Cancelar</Button>
                     </div>
                   </>
                 ) : (
@@ -179,8 +176,8 @@ const Orcamentos = () => {
                     <input type="date" placeholder="Data de Fim" value={votacao.data_fim} onChange={(e) => setVotacao({ ...votacao, data_fim: e.target.value })} />
                     <input type="text" placeholder="Tipo" value={votacao.tipo_votacao} onChange={(e) => setVotacao({ ...votacao, tipo_votacao: e.target.value })} />
                     <div>
-                      <button onClick={handleCreateVotacao}>Criar</button>
-                      <button onClick={() => setShowModal(false)}>Cancelar</button>
+                      <Button onClick={handleCreateVotacao}>Criar</Button>
+                      <Button onClick={() => setShowModal(false)}>Cancelar</Button>
                     </div>
                   </>
                 )}

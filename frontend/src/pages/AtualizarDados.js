@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Button from '../components/Button.js';
 
 const AtualizarDados = () => {
   const [data_nascimento, setDataNascimento] = useState('');
@@ -97,7 +98,7 @@ const AtualizarDados = () => {
           type="file"
           onChange={(e) => setFoto(e.target.files[0])}
         />
-        <button onClick={handleUpdate}>Atualizar</button>
+        <Button onClick={handleUpdate}>Atualizar</Button>
       </div>
       <ToastContainer />
     </div>

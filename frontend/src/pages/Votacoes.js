@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import styles from  "../styles/LayoutPaginasTabelas.module.css";
 import Navbar2 from "../components/Navbar2.js";
 import Tabela from "../components/Tabela";
+import Button from '../components/Button.js';
 
 const Votacoes = () => {
   const [votacoes, setVotacoes] = useState({
@@ -73,13 +74,13 @@ const Votacoes = () => {
         })
       });
 
-      if (!res.ok) throw new Error('Erro ao registrar voto.');
+      if (!res.ok) throw new Error('Erro ao registar voto.');
 
-      toast.success('Voto registrado com sucesso!');
+      toast.success('Voto registado com sucesso!');
       setModalAberto('');
     } catch (error) {
-      console.error('Erro ao registrar voto:', error);
-      toast.error('Erro ao registrar voto.');
+      console.error('Erro ao registar voto:', error);
+      toast.error('Erro ao registar voto.');
     }
   };
 
@@ -162,14 +163,7 @@ const Votacoes = () => {
             >
               Votar
             </button>
-            <button
-              onClick={() => {
-                setModalAberto('');
-                setVotacaoAtual(null);
-              }}
-            >
-              Fechar
-            </button>
+            <Button onClick={() => {setModalAberto(''); setVotacaoAtual(null);}}>Fechar</Button>
           </div>
         </div>
       </>
